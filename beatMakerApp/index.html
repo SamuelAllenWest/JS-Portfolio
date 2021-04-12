@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beatmaker</title>
+    <link rel="stylesheet" href="./style.css">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+</head>
+
+
+<body>
+    <div class="sequencer">    
+        <div class="kick-track">
+            <div class="controls">
+                <h1>Kick</h1>
+                    <!--data-track is a tool to know what button we're clicking on, the track number if you will -->
+                <button data-track='0' class='mute kick-volume'>
+                    <i class= 'fas fa-volume-mute'></i>
+                </button>
+                <select name="kick-select" id="kick-select">
+                    <!-- When selected we're going to take the value and with JS run it from the location -->
+                    <option value="./exampleSounds/kick-classic.wav">Classic Kick</option>
+                    <option value="./exampleSounds/kick-808.wav">808 Kick</option>
+                    <option value="./exampleSounds/kick-heavy.wav">Heavy Kick</option>
+                </select>
+            </div>
+            <div class='kick'>
+                <!-- Each of these is breaking up the classes with spaces; b0 is a class, pad is a class, kick-pad is a class -->
+                <div class="pad kick-pad b0"></div>
+                <div class="pad kick-pad b1"></div>
+                <div class="pad kick-pad b2"></div>
+                <div class="pad kick-pad b3"></div>
+                <div class="pad kick-pad b4"></div>
+                <div class="pad kick-pad b5"></div>
+                <div class="pad kick-pad b6"></div>
+                <div class="pad kick-pad b7"></div>
+                
+            </div>
+
+
+        </div>
+        <div class="snare-track">
+            <div class="controls">
+                <h1>Snare</h1>
+                    <!--data-track is a tool to know what button we're clicking on, the track number if you will -->
+                <button data-track='1' class='mute snare-volume'>
+                    <i class= 'fas fa-volume-mute'></i>
+                </button>
+                <select name="snare-select" id="snare-select">
+                    <!-- When selected we're going to take the value and with JS run it from the location -->
+                    <option value="./exampleSounds/snare-vinyl01.wav">Vinyl 1 Snare</option>
+                    <option value="./exampleSounds/snare-808.wav">808 Snare</option>
+                    <option value="./exampleSounds/sanre-acoustic01.wav">Acoutsic Snare 1</option>
+                </select>
+            </div>
+            <div class='snare'>
+                <div class="pad snare-pad b0"></div>
+                <div class="pad snare-pad b1"></div>
+                <div class="pad snare-pad b2"></div>
+                <div class="pad snare-pad b3"></div>
+                <div class="pad snare-pad b4"></div>
+                <div class="pad snare-pad b5"></div>
+                <div class="pad snare-pad b6"></div>
+                <div class="pad snare-pad b7"></div>
+                
+            </div>
+
+
+        </div>
+        <div class="hihat-track">
+            <div class="controls">
+                <h1>Hihat</h1>
+                    <!--data-track is a tool to know what button we're clicking on, the track number if you will -->
+                <button data-track='2' class='mute hihat-volume'>
+                    <i class= 'fas fa-volume-mute'></i>
+                </button>
+                <select name="hihat-select" id="hihat-select">
+                    <!-- When selected we're going to take the value and with JS run it from the location -->
+                    <option value="./exampleSounds/hihat-acoustic01.wav">Acoustic Hihat 1</option>
+                    <option value="./exampleSounds/hihat-808.wav">808 Hihat</option>
+                </select>
+            </div>
+            <div class='hihat'>
+                <div class="pad hihat-pad b0"></div>
+                <div class="pad hihat-pad b1"></div>
+                <div class="pad hihat-pad b2"></div>
+                <div class="pad hihat-pad b3"></div>
+                <div class="pad hihat-pad b4"></div>
+                <div class="pad hihat-pad b5"></div>
+                <div class="pad hihat-pad b6"></div>
+                <div class="pad hihat-pad b7"></div>
+            </div>
+
+
+        </div>   
+        <button class='play' >Play</button>
+
+        <div class='tempo'>
+            <input type='range' class='tempo-slider' max='300' min='20' default='150'>
+            <p>Tempo: <span class='tempo-nr'>150</span></p>
+        </div>
+    </div>
+    
+    <audio class= 'kick-sound' src="./exampleSounds/kick-classic.wav"></audio>
+    <audio class= 'snare-sound'src="./exampleSounds/snare-vinyl01.wav"></audio>
+    <audio class= 'hihat-sound'src="./exampleSounds/hihat-acoustic01.wav"></audio>
+
+    <script src="./beatMakerApp.js"></script>    
+</body>
+</html>

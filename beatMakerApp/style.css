@@ -1,0 +1,140 @@
+* {
+  /*Remove Presets */
+  margin: 0;
+  padding: 0;
+  /*border-box allows us to add padding and what not to inside of an element, not outside*/
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+i,
+svg {
+  /*This is preventing these elements from recieving events*/
+  pointer-events: none;
+}
+
+.sequencer {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.kick-pad,
+.snare-pad,
+.hihat-pad {
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem 0.5rem;
+  cursor: pointer;
+}
+
+.kick-pad {
+  background-color: rgb(137, 226, 226);
+}
+.snare-pad {
+  background-color: rgb(197, 137, 94);
+}
+.hihat-pad {
+  background-color: rgb(223, 130, 223);
+}
+
+.kick-pad.active {
+  background-color: rgb(31, 192, 192);
+}
+.snare-pad.active {
+  background-color: rgb(202, 97, 21);
+}
+.hihat-pad.active {
+  background-color: rgb(219, 50, 219);
+}
+
+.hihat,
+.kick,
+.snare {
+  display: flex;
+}
+
+.hihat-track,
+.kick-track,
+.snare-track {
+  display: flex;
+  align-items: center;
+  width: 70%;
+  justify-content: space-between;
+  margin: 5rem 0.5rem;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  margin: 0rem 2rem;
+}
+
+.controls button {
+  padding: 1rem;
+  border: none;
+  background: gainsboro;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.pad {
+  transition: all 0.25s ease;
+}
+
+.play {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background: indigo;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 3rem 0.5rem;
+}
+
+select {
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+@keyframes playTrack {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.mute.active {
+  background: rgb(78, 76, 76);
+}
+
+.tempo {
+  margin: 3rem;
+  width: 30%;
+}
+
+.tempo-slider {
+  padding: 0.2rem;
+  -webkit-appearance: none;
+
+  margin: 1rem 0rem;
+  width: 100%;
+  position: relative;
+  background: rgb(204, 212, 219);
+  cursor: pointer;
+  border: radius 1rem;
+}
+
+.tempo p {
+  font-size: 1.5rem;
+  margin: 2rem;
+  text-align: center;
+}
